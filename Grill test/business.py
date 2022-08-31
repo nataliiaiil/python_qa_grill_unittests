@@ -28,7 +28,7 @@ For example 'Your Tenderloin is cooked burned - not good'
 |  Meat Type  |   Raw    |   Rare    |  Medium   | Well Done |   Burned   |
 +-------------+----------+-----------+-----------+-----------+------------+
 | New York    | 0-8 min  | 9-10 min  | 11-12 min | 13-14 min | 15-120 min |
-| Ribeye      | 0-5 min  | 6-7 min   | 8-9 min   | 10-11 min | 11-120 min |
+| Ribeye      | 0-5 min  | 6-7 min   | 8-9 min   | 10-11 min | 12-120 min |
 | Tenderloin  | 0-50 min | 51-90 min | --------- | --------- | 91-120 min |
 | Porterhouse | 0-6 min  | 7-8 min   | 8-10 min  | 11-13 min | 14-120 min |
 +-------------+----------+-----------+-----------+-----------+------------+
@@ -86,7 +86,7 @@ meat_types = {
         CookingPeriod(6, 7, PreparationDegree.RARE),
         CookingPeriod(8, 9, PreparationDegree.MEDIUM),
         CookingPeriod(10, 11, PreparationDegree.WELL_DONE),
-        CookingPeriod(11, 120, PreparationDegree.BURNED),
+        CookingPeriod(12, 120, PreparationDegree.BURNED),
     ],
     'Tenderloin': [
         CookingPeriod(0, 50, PreparationDegree.RAW),
@@ -106,7 +106,7 @@ def grill(meat_type, cook_time_mins):
     if not isinstance(meat_type, str):
         raise Exception('meat_type should be string')
 
-    if not isinstance(cook_time_mins, int):
+    if not isinstance(cook_time_mins, int) or isinstance(cook_time_mins, bool):
          raise Exception('cook_time_mins should be int')
 
     if meat_type not in meat_types:

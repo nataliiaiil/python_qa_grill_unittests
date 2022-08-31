@@ -56,10 +56,7 @@ class TestGrill:
 
     def test_degree_med_ribeye(self):
         assert "medium" in business.grill("Ribeye", 9)
-#    def test_degree_med_tenderloin(self):
-#        with pytest.raises(Exception) as exc_info:
-#            business.grill("Tenderloin", )
-#        assert "integers" in str(exc_info)
+
     def test_degree_med_porterhouse(self):
         assert "medium" in business.grill("Porterhouse", 9)
 
@@ -69,8 +66,7 @@ class TestGrill:
 
     def test_degree_well_ribeye(self):
         assert "well" in business.grill("Ribeye", 11)
-#    def test_degree_well_tenderloin(self):
-#        assert "well" in business.grill("Tenderloin", 89)
+
     def test_degree_well_porterhouse(self):
         assert "well" in business.grill("Porterhouse", 12)
 #Preparation degree: BURNED
@@ -135,5 +131,5 @@ class TestGrill:
 
     def test_internal_app_error(self):
         with pytest.raises(Exception) as exc_info:
-            business.grill("")
+            business.grill("Porterhouse", 11)
         assert "internal application error" in str(exc_info)
