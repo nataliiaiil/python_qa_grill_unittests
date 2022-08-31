@@ -14,8 +14,8 @@ Constraints:
 - We only support the following types of meat: New York, Ribeye, Tenderloin, Porterhouse. 
 If any other meat is provided by user - throw exception with text 'unknown meat type'.
 - We only support cooking from 1 to 120 minutes. 
-If cooking time is less than 1 minute - throw exception with text 'cooking for over 120 minutes is prohibited'.
-If cooking time is more than 120 minutes - throw exception with text 'cooking for less than 1 minute is prohibited'.
+If cooking time is less than 1 minute - throw exception with text 'cooking for less than 1 minute is prohibited'.
+If cooking time is more than 120 minutes - throw exception with text 'cooking for over 120 minutes is prohibited'.
 - We only support 5 types of preparation degree of meat: raw, rare, medium, well done, burned. 
 If any other degree is returned from the function - it is a bug and it should be reported to the manager.
 - When executed successfully, the function should return the following string: 'Your MEAT_TYPE is cooked PREPARATION_DEGREE'
