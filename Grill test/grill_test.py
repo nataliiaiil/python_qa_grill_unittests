@@ -82,7 +82,7 @@ class TestGrill:
 
     def test_degree_burn_tenderloin(self):
         assert "burned" in business.grill("Tenderloin", 119)
-        
+
     def test_degree_burn_porterhouse(self):
         assert "burned" in business.grill("Porterhouse", 119)
 
@@ -132,3 +132,8 @@ class TestGrill:
         with pytest.raises(Exception) as exc_info:
             business.grill("Porterhouse", 121)
         assert "over 120 minutes" in str(exc_info)
+
+    def test_internal_app_error(self):
+        with pytest.raises(Exception) as exc_info:
+            business.grill("")
+        assert "internal application error" in str(exc_info)
