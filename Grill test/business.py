@@ -96,7 +96,7 @@ meat_types = {
     'Porterhouse': [
         CookingPeriod(0, 6, PreparationDegree.RAW),
         CookingPeriod(7, 8, PreparationDegree.RARE),
-        CookingPeriod(8, 10, PreparationDegree.MEDIUM),
+        CookingPeriod(9, 10, PreparationDegree.MEDIUM),
         CookingPeriod(11, 13, PreparationDegree.WELL_DONE),
         CookingPeriod(14, 120, PreparationDegree.BURNED),
     ],
