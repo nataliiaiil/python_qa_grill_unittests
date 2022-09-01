@@ -27,10 +27,10 @@ For example 'Your Tenderloin is cooked burned - not good'
 +-------------+----------+-----------+-----------+-----------+------------+
 |  Meat Type  |   Raw    |   Rare    |  Medium   | Well Done |   Burned   |
 +-------------+----------+-----------+-----------+-----------+------------+
-| New York    | 0-8 min  | 9-10 min  | 11-12 min | 13-14 min | 15-120 min |
-| Ribeye      | 0-5 min  | 6-7 min   | 8-9 min   | 10-11 min | 12-120 min |
-| Tenderloin  | 0-50 min | 51-90 min | --------- | --------- | 91-120 min |
-| Porterhouse | 0-6 min  | 7-8 min   | 8-10 min  | 11-13 min | 14-120 min |
+| New York    | 1-8 min  | 9-10 min  | 11-12 min | 13-14 min | 15-120 min |
+| Ribeye      | 1-5 min  | 6-7 min   | 8-9 min   | 10-11 min | 12-120 min |
+| Tenderloin  | 1-50 min | 51-90 min | --------- | --------- | 91-120 min |
+| Porterhouse | 1-6 min  | 7-8 min   | 8-10 min  | 11-13 min | 14-120 min |
 +-------------+----------+-----------+-----------+-----------+------------+
 
 If the function returns preparation degree that is different from the table values - this is a bug and needs to be reported to the manager.
@@ -75,26 +75,26 @@ class CookingPeriod:
 
 meat_types = {
     'New York': [
-        CookingPeriod(0, 8, PreparationDegree.RAW),
+        CookingPeriod(1, 8, PreparationDegree.RAW),
         CookingPeriod(9, 10, PreparationDegree.RARE),
         CookingPeriod(11, 12, PreparationDegree.MEDIUM),
         CookingPeriod(13, 14, PreparationDegree.WELL_DONE),
         CookingPeriod(15, 120, PreparationDegree.BURNED),
     ],
     'Ribeye': [
-        CookingPeriod(0, 5, PreparationDegree.RAW),
+        CookingPeriod(1, 5, PreparationDegree.RAW),
         CookingPeriod(6, 7, PreparationDegree.RARE),
         CookingPeriod(8, 9, PreparationDegree.MEDIUM),
         CookingPeriod(10, 11, PreparationDegree.WELL_DONE),
         CookingPeriod(12, 120, PreparationDegree.BURNED),
     ],
     'Tenderloin': [
-        CookingPeriod(0, 50, PreparationDegree.RAW),
+        CookingPeriod(1, 50, PreparationDegree.RAW),
         CookingPeriod(51, 90, PreparationDegree.RARE),
         CookingPeriod(91, 120, PreparationDegree.BURNED),
     ],
     'Porterhouse': [
-        CookingPeriod(0, 6, PreparationDegree.RAW),
+        CookingPeriod(1, 6, PreparationDegree.RAW),
         CookingPeriod(7, 8, PreparationDegree.RARE),
         CookingPeriod(9, 10, PreparationDegree.MEDIUM),
         CookingPeriod(11, 13, PreparationDegree.WELL_DONE),
